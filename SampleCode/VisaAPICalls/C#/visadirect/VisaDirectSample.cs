@@ -20,7 +20,9 @@ namespace Visa {
    string baseUri = @"visadirect/";
    string resourcePath = @"fundstransfer/v1/pullfundstransactions/";
    string url = @"https://sandbox.api.visa.com/" + baseUri + resourcePath;
-   string body = "{\"businessApplicationId\":\"AA\",\"foreignExchangeFeeTransaction\":\"11.99\",\"amount\":\"124.02\",\"cardAcceptor\":{\"address\":{\"county\":\"SanMateo\",\"state\":\"CA\",\"zipCode\":\"94404\",\"country\":\"USA\"},\"idCode\":\"ABCD1234ABCD123\",\"name\":\"VisaInc.USA-FosterCity\",\"terminalId\":\"ABCD1234\"},\"senderCurrencyCode\":\"USD\",\"senderCardExpiryDate\":\"2015-10\",\"surcharge\":\"11.99\",\"systemsTraceAuditNumber\":\"451001\",\"acquirerCountryCode\":\"840\",\"acquiringBin\":\"408999\",\"cavv\":\"0700100038238906000013405823891061668252\",\"retrievalReferenceNumber\":\"330000550000\",\"localTransactionDateTime\":\"2016-02-10T09:37:35\",\"senderPrimaryAccountNumber\":\"4895142232120006\"}";
+   string localTransactionDateTime = DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ss");
+   string body = "{\"businessApplicationId\":\"AA\",\"foreignExchangeFeeTransaction\":\"1.99\",\"amount\":\"124.02\",\"cardAcceptor\":{\"address\":{\"county\":\"SanMateo\",\"state\":\"CA\",\"zipCode\":\"94404\",\"country\":\"USA\"},\"idCode\":\"ABCD1234ABCD123\",\"name\":\"VisaInc.USA-FosterCity\",\"terminalId\":\"ABCD1234\"},\"senderCurrencyCode\":\"USD\",\"senderCardExpiryDate\":\"2015-10\",\"surcharge\":\"11.99\",\"systemsTraceAuditNumber\":\"451001\",\"acquirerCountryCode\":\"840\",\"acquiringBin\":\"408999\",\"cavv\":\"0700100038238906000013405823891061668252\",\"retrievalReferenceNumber\":\"330000550000\",\"localTransactionDateTime\": \"" + localTransactionDateTime + "\",\"senderPrimaryAccountNumber\":\"4895142232120006\"}";
+
    string responseBody = makeVisaDirectAPICall(url,
     body,
     USER_ID,
