@@ -1,0 +1,13 @@
+{
+  "version": "1.0.0-*",
+  "description": "Visa Forex Sample",
+
+  "compilationOptions": {
+    "emitEntryPoint": true
+  },
+
+  "frameworks": {
+    "dnx451": { },
+    "dnxcore50": { }
+  }
+}
